@@ -8,7 +8,13 @@ def define(word):
     if word in data:
         return data[word]
     elif len(get_close_matches(word, data.keys())) > 0:
-        return "Did you mean %s instead?" % get_close_matches(word, data.keys())[0]
+        confirm = input("Did you mean %s instead? Enter Y if yes, or N if no." % get_close_matches(word, data.keys())[0])
+        if confirm == "Y":
+            return data[get_close_matches(word, data.keys())[0]]
+        elif confirm == "N":
+            return "If you say so..."
+        else:
+            return "We didn't understand your entry. Please try again."
     else:
         return "The word does not exist. Please double check it."
 
