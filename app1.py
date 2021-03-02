@@ -18,7 +18,12 @@ def define(word):
     else:
         return "The word does not exist. Please double check it."
 
-
 word = input("Enter word:")
 
-print(define(word))
+output = define(word)
+
+if type(output) == list:
+    for item in output:
+        print(item)
+else:
+    print(output)
