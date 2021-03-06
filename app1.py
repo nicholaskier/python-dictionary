@@ -24,6 +24,7 @@ def define(word):
 
 word = input("Enter word:")
 
+
 output = define(word)
 
 if type(output) == list:
